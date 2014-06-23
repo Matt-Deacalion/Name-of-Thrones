@@ -38,3 +38,10 @@ class MarkovChain:
             tallies[now][after] += 1
 
         return tallies
+
+    def get_sum_transitions(self, tallies):
+        """
+        Takes a dict of dicts containing information about transition tallies
+        and returns a dict of sum totals for each symbol.
+        """
+        return {k: sum(v.values()) for k, v in tallies.items()}

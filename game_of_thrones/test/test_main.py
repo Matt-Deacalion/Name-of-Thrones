@@ -6,6 +6,7 @@ class MarkovChainTest(unittest.TestCase):
 
     def setUp(self):
         self.text = 'You know nothing Jon Snow!'
+
         self.transitions = [
             ('Y', 'o'),
             ('o', 'u'),
@@ -33,6 +34,22 @@ class MarkovChainTest(unittest.TestCase):
             ('o', 'w'),
             ('w', '!'),
         ]
+
+        self.expected_transitions = {
+            'Y': 1,
+            ' ': 4,
+            'o': 5,
+            'u': 1,
+            'k': 1,
+            'n': 5,
+            'w': 2,
+            't': 1,
+            'h': 1,
+            'i': 1,
+            'g': 1,
+            'J': 1,
+            'S': 1,
+        }
 
     def test_markovchain_class_exists(self):
         """
@@ -66,23 +83,32 @@ class MarkovChainTest(unittest.TestCase):
         """
         Does the `get_transition_tallies` method work correctly?
         """
-        expected = {
-            'Y': 1,
-            ' ': 4,
-            'o': 5,
-            'u': 1,
-            'k': 1,
-            'n': 5,
-            'w': 2,
-            't': 1,
-            'h': 1,
-            'i': 1,
-            'g': 1,
-            'J': 1,
-            'S': 1,
-        }
-
         mc = MarkovChain(self.text)
 
         for k, v in mc.get_transition_tallies(self.transitions).items():
-            self.assertEqual(sum(v.values()), expected[k])
+            self.assertEqual(sum(v.values()), self.expected_transitions[k])
+
+    def test_get_sum_transitions(self):
+        """
+        Does the `get_sum_transitions` method work correctly?
+        """
+        tallies = {
+            'Y': {'o': 1},
+            'o': {'u': 1, 't': 1, 'n': 1, 'w': 2},
+            'u': {' ': 1},
+            ' ': {'k': 1, 'n': 1, 'J': 1, 'S': 1},
+            'k': {'n': 1},
+            'n': {'o': 3, ' ': 1, 'g': 1},
+            'w': {' ': 1, '!': 1},
+            't': {'h': 1},
+            'h': {'i': 1},
+            'i': {'n': 1},
+            'g': {' ': 1},
+            'J': {'o': 1},
+            'S': {'n': 1},
+        }
+
+        self.assertEqual(
+            MarkovChain(self.text).get_sum_transitions(tallies),
+            self.expected_transitions,
+        )
