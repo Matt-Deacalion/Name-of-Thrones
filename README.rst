@@ -25,13 +25,17 @@ unique project names, host names and the occasional stray cat.
 
 Installation
 ------------
-You can install the *Game of Thrones Namer* using pip::
+You can install the *Game of Thrones Namer* using pip:
+
+.. code-block:: bash
 
     $ pip install game-of-thrones
 
 Usage
 -----
-You can use the `game-of-thrones` command from the shell to run the Game of Thrones Namer::
+You can use the `game-of-thrones` command from the shell to run the Game of Thrones Namer:
+
+.. code-block:: bash
 
     $ game-of-thrones --help
 
