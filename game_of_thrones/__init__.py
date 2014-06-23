@@ -6,4 +6,10 @@ class MarkovChain:
         self.text = text
 
     def pair_symbols(self, text):
+        """
+        Takes an string and returns a list of tuples. For example:
+
+            >>> pair_symbols('Arya')
+            [('A', 'r'), ('r', 'y'), ('y', 'a')]
+        """
         return [pair for pair in zip(text[0::1], text[1::1])]
