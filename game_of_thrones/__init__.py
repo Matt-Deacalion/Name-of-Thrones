@@ -22,7 +22,7 @@ class MarkovChain:
 
     def __init__(self, text=None, min_length=None, max_length=None):
         self.text = text if text else self.sample_data
-        self.min_length = min_length if min_length else 3
+        self.min_length = min_length if min_length else 4
         self.max_length = max_length if max_length else 10
         self.pairs = []
 
