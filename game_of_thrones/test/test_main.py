@@ -2,6 +2,7 @@ from game_of_thrones import MarkovChain
 from itertools import islice
 from unittest import mock
 import unittest
+import string
 
 
 class MarkovChainTest(unittest.TestCase):
@@ -141,8 +142,30 @@ class MarkovChainTest(unittest.TestCase):
         mc.transition_tallies = self.tallies
         mc.sum_transitions = self.expected_transitions
 
-        string = ''.join(islice(mc.letter(), 3))
+        word = ''.join(islice(mc.letter(), 3))
 
-        self.assertEqual(string[0], 'Y')
-        self.assertEqual(string[1], 'o')
-        self.assertTrue(string[2] in 'utnw')
+        self.assertEqual(word[0], 'Y')
+        self.assertEqual(word[1], 'o')
+        self.assertTrue(word[2] in 'utnw')
+
+    def test_word(self):
+        """
+        Does the `word` generator work correctly?
+        """
+        expected_letters = list(self.expected_transitions.keys())
+        unexpected_letters = string.ascii_letters.translate(
+            {ord(i): None for i in expected_letters},
+        )
+
+        mc = MarkovChain(self.text, min_length=5, max_length=5)
+        mc.transition_tallies = self.tallies
+        mc.sum_transitions = self.expected_transitions
+
+        words = ''.join(islice(mc.word(), 3))
+
+        for word in words:
+            self.assertTrue(len(word), 5)
+
+            for letter in word:
+                self.assertTrue(letter in expected_letters)
+                self.assertFalse(letter in unexpected_letters)

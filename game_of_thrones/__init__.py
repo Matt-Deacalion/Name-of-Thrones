@@ -1,5 +1,6 @@
 import random
 import string
+from itertools import islice
 from collections import defaultdict
 
 
@@ -7,8 +8,10 @@ class MarkovChain:
     """
     Entity which contains a chunk of text and a Markov chain generated from it.
     """
-    def __init__(self, text):
+    def __init__(self, text, min_length=None, max_length=None):
         self.text = text
+        self.min_length = min_length if min_length else 3
+        self.max_length = max_length if max_length else 10
 
     def pair_symbols(self, text):
         """
@@ -72,3 +75,11 @@ class MarkovChain:
         while True:
             yield letter
             letter = self.get_weighted_letter(letter)
+
+    def word(self):
+        """
+        Generator that returns the next word indefinitely.
+        """
+        while True:
+            length = random.randint(self.min_length, self.max_length)
+            yield ''.join(islice(self.letter(), length))
