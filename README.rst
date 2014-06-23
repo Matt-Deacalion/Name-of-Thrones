@@ -4,6 +4,9 @@ Game of Thrones Namer
 .. image:: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer.svg?branch=master
     :target: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer
     :alt: Build Status
+.. image:: https://pypip.in/download/game-of-thrones/badge.png?period=week
+    :target: https://pypi.python.org/pypi/game-of-thrones/
+    :alt: Downloads
 .. image:: https://pypip.in/version/game-of-thrones/badge.png
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Latest Version
