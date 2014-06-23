@@ -7,6 +7,9 @@ Game of Thrones Namer
 .. image:: https://pypip.in/version/game-of-thrones/badge.png
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Latest Version
+.. image:: https://pypip.in/license/game-of-thrones/badge.png
+    :target: https://pypi.python.org/pypi/game-of-thrones/
+    :alt: License
 
 Command line tool to generate words that sound like characters from Game of Thrones. Useful for
 unique project names, host names and the occasional stray cat.
