@@ -2,9 +2,9 @@ from setuptools import setup
 import game_of_thrones
 
 setup(
-    name='game-of-thrones-namer',
+    name='game-of-thrones',
     version=game_of_thrones.__version__.strip(),
-    url='http://dirtymonkey.co.uk/game-of-thrones-namer',
+    url='http://dirtymonkey.co.uk/game-of-thrones',
     license='MIT',
     author=game_of_thrones.__author__.strip(),
     author_email='matt@dirtymonkey.co.uk',

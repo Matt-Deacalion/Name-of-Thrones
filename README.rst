@@ -7,9 +7,9 @@ unique project names, host names and the occasional stray cat.
 
 Installation
 ------------
-You can install `game-of-thrones-namer` using pip::
+You can install the *Game of Thrones Namer* using pip::
 
-    $ pip install game-of-thrones-namer
+    $ pip install game-of-thrones
 
 Usage
 -----
