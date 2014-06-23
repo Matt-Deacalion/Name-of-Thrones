@@ -1,3 +1,4 @@
+import random
 import string
 from collections import defaultdict
 
@@ -45,3 +46,16 @@ class MarkovChain:
         and returns a dict of sum totals for each symbol.
         """
         return {k: sum(v.values()) for k, v in tallies.items()}
+
+    def get_weighted_letter(self, letter):
+        """
+        Takes a letter and returns a weighted random letter. With the weights
+        being derived from our Markov Chain.
+        """
+        random_sum = random.randrange(0, self.sum_transitions[letter])
+
+        for after, weight in self.transition_tallies[letter].items():
+            if random_sum < weight:
+                return after
+
+            random_sum -= weight
