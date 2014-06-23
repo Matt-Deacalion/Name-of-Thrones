@@ -5,7 +5,7 @@ Command line tool to generate words that
 sound like characters from Game of Thrones.
 """
 __author__ = 'Matt Deacalion Stevens'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 import random
 import string
