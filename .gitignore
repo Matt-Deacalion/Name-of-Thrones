@@ -1,0 +1,13 @@
+# Byte-compiled
+__pycache__/
+
+# Rope
+.ropeproject
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Coverage report
+.coverage
