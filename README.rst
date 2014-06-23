@@ -7,6 +7,9 @@ Game of Thrones Namer
 .. image:: https://pypip.in/version/game-of-thrones/badge.png
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Latest Version
+.. image:: https://pypip.in/wheel/game-of-thrones/badge.png
+    :target: https://pypi.python.org/pypi/game-of-thrones/
+    :alt: Wheel Status
 .. image:: https://pypip.in/license/game-of-thrones/badge.png
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: License
