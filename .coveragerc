@@ -1,0 +1,4 @@
+[run]
+omit =
+    game_of_thrones/test/*
+    game_of_thrones/main.py
