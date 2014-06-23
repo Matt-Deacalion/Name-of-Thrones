@@ -1,4 +1,5 @@
 from game_of_thrones import MarkovChain
+from itertools import islice
 from unittest import mock
 import unittest
 
@@ -128,3 +129,20 @@ class MarkovChainTest(unittest.TestCase):
 
         self.assertEqual(mc.get_weighted_letter('Y'), 'o')
         self.assertTrue(mc.get_weighted_letter('o') in 'utnw')
+
+    @mock.patch('game_of_thrones.random.choice', autospec=True)
+    def test_letter(self, mock_random_randchoice):
+        """
+        Does the `letter` generator work correctly?
+        """
+        mock_random_randchoice.return_value = 'Y'
+
+        mc = MarkovChain(self.text)
+        mc.transition_tallies = self.tallies
+        mc.sum_transitions = self.expected_transitions
+
+        string = ''.join(islice(mc.letter(), 3))
+
+        self.assertEqual(string[0], 'Y')
+        self.assertEqual(string[1], 'o')
+        self.assertTrue(string[2] in 'utnw')

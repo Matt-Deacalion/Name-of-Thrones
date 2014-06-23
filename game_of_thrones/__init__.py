@@ -59,3 +59,13 @@ class MarkovChain:
                 return after
 
             random_sum -= weight
+
+    def letter(self):
+        """
+        Generator that returns the next letter indefinitely.
+        """
+        letter = random.choice(self.transition_tallies.keys())
+
+        while True:
+            yield letter
+            letter = self.get_weighted_letter(letter)
