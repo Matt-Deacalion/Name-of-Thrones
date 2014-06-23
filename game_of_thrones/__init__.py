@@ -67,7 +67,7 @@ class MarkovChain:
         """
         Generator that returns the next letter indefinitely.
         """
-        letter = random.choice(self.transition_tallies.keys())
+        letter = random.choice(list(self.transition_tallies.keys()))
 
         while True:
             yield letter
