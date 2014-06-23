@@ -115,15 +115,16 @@ class MarkovChainTest(unittest.TestCase):
             self.expected_transitions,
         )
 
-    @mock.patch('game_of_thrones.random.randrange', autospec=True)
-    def test_get_weighted_letter(self, mock_random_randrange):
+    @mock.patch('game_of_thrones.random.randint', autospec=True)
+    def test_get_weighted_letter(self, mock_random_randint):
         """
         Does the `get_weighted_letter` method work correctly?
         """
-        mock_random_randrange.return_value = 0
+        mock_random_randint.return_value = 0
 
         mc = MarkovChain(self.text)
         mc.transition_tallies = self.tallies
         mc.sum_transitions = self.expected_transitions
 
         self.assertEqual(mc.get_weighted_letter('Y'), 'o')
+        self.assertTrue(mc.get_weighted_letter('o') in 'utnw')

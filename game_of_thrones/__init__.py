@@ -52,7 +52,7 @@ class MarkovChain:
         Takes a letter and returns a weighted random letter. With the weights
         being derived from our Markov Chain.
         """
-        random_sum = random.randrange(0, self.sum_transitions[letter])
+        random_sum = random.randint(0, self.sum_transitions[letter] - 1)
 
         for after, weight in self.transition_tallies[letter].items():
             if random_sum < weight:
