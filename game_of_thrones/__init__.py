@@ -24,8 +24,11 @@ class MarkovChain:
         self.text = text if text else self.sample_data
         self.min_length = min_length if min_length else 3
         self.max_length = max_length if max_length else 10
+        self.pairs = []
 
-        self.pairs = self.pair_symbols(self.sanitise_text(text))
+        for word in self.text.split():
+            self.pairs += self.pair_symbols(self.sanitise_text(word))
+
         self.transition_tallies = self.get_transition_tallies()
         self.sum_transitions = self.get_sum_transitions()
 
