@@ -1,6 +1,9 @@
 =====================
 Game of Thrones Namer
 =====================
+.. image:: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer.svg?branch=master
+    :target: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer
+    :alt: Build Status
 
 Command line tool to generate words that sound like characters from Game of Thrones. Useful for
 unique project names, host names and the occasional stray cat.
