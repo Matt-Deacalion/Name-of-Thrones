@@ -35,6 +35,9 @@ class MarkovChain:
         """
         tallies = defaultdict(lambda: defaultdict(int))
 
+        # we remove the last pair because it doesn't transition anywhere
+        pairs = pairs[:-1]
+
         for now, after in pairs:
             tallies[now][after] += 1
 
