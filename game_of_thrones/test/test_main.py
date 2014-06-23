@@ -1,8 +1,13 @@
 from game_of_thrones import MarkovChain
 from itertools import islice
-from unittest import mock
 import unittest
 import string
+
+# Python 3
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 
 
 class MarkovChainTest(unittest.TestCase):
@@ -153,9 +158,16 @@ class MarkovChainTest(unittest.TestCase):
         Does the `word` generator work correctly?
         """
         expected_letters = list(self.expected_transitions.keys())
-        unexpected_letters = string.ascii_letters.translate(
-            {ord(i): None for i in expected_letters},
-        )
+
+        try:
+            unexpected_letters = string.ascii_letters.translate(
+                {ord(i): None for i in expected_letters},
+            )
+        except TypeError:
+            unexpected_letters = string.ascii_letters.translate(
+                None,
+                ''.join(expected_letters),
+            )
 
         mc = MarkovChain(self.text, min_length=5, max_length=5)
         mc.transition_tallies = self.tallies
