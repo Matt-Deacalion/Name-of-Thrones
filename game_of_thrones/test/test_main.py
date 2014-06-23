@@ -1,6 +1,7 @@
 from game_of_thrones import MarkovChain
 import unittest
 
+
 class MarkovChainTest(unittest.TestCase):
 
     def setUp(self):
@@ -52,3 +53,10 @@ class MarkovChainTest(unittest.TestCase):
                 ('w', '!'),
             ],
         )
+
+    def test_sanitise_text(self):
+        """
+        Does the `sanitise_text` method work correctly?
+        """
+        mc = MarkovChain(self.text)
+        self.assertEqual(mc.sanitise_text(mc.text), 'youknownothingjonsnow')
