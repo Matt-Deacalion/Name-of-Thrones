@@ -8,8 +8,20 @@ class MarkovChain:
     """
     Entity which contains a chunk of text and a Markov chain generated from it.
     """
-    def __init__(self, text, min_length=None, max_length=None):
-        self.text = text
+    sample_data = """
+        tyrion lannister rock cersei baratheon stark ibben targaryen daena
+        rhaenyra velaryon viserys aegon elaena naerys aemon daenerys martell
+        blackfyre maekar aerion mararys valarr rhae daella syrio forel
+        dothraki tywin sansa dontos yoren osha skagos hodor noye jeyne sandor
+        clegane tyrell margaery eyrie davos tully arya snow artos mormont
+        catelyn petry baelish melisandre ygritte jeor shae khal drogo saan
+        salladhor cressen dagmer alton payne xaro illyrio qotho daario naharis
+        prendahl gendry qyburn jaqen rorge armeca marillion beric dondarrion
+        slynt ilyn hallyne mance orell tormund craster maester khalasar
+    """
+
+    def __init__(self, text=None, min_length=None, max_length=None):
+        self.text = text if text else self.sample_data
         self.min_length = min_length if min_length else 3
         self.max_length = max_length if max_length else 10
 
