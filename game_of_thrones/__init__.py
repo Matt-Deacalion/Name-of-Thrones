@@ -13,6 +13,10 @@ class MarkovChain:
         self.min_length = min_length if min_length else 3
         self.max_length = max_length if max_length else 10
 
+        self.pairs = self.pair_symbols(self.sanitise_text(text))
+        self.transition_tallies = self.get_transition_tallies()
+        self.sum_transitions = self.get_sum_transitions()
+
     def pair_symbols(self, text):
         """
         Takes an string and returns a list of tuples. For example:
@@ -31,11 +35,12 @@ class MarkovChain:
             [s for s in text.lower() if s in string.ascii_lowercase],
         )
 
-    def get_transition_tallies(self, pairs):
+    def get_transition_tallies(self, pairs=None):
         """
         Takes a list of tuples and returns a dict containing information about
         how often symbols appear after other symbols.
         """
+        pairs = pairs if pairs else self.pairs
         tallies = defaultdict(lambda: defaultdict(int))
 
         # we remove the last pair because it doesn't transition anywhere
@@ -46,11 +51,12 @@ class MarkovChain:
 
         return tallies
 
-    def get_sum_transitions(self, tallies):
+    def get_sum_transitions(self, tallies=None):
         """
         Takes a dict of dicts containing information about transition tallies
         and returns a dict of sum totals for each symbol.
         """
+        tallies = tallies if tallies else self.transition_tallies
         return {k: sum(v.values()) for k, v in tallies.items()}
 
     def get_weighted_letter(self, letter):
