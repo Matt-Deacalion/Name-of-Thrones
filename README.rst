@@ -30,7 +30,7 @@ You can use the `game-of-thrones` command from the shell to run the Game of Thro
       --min=<length>           the minimum length of each word [default: 4].
       --max=<length>           the maximum length of each word [default: 10].
 
-Licence
+License
 -------
 Copyright © 2014 `Matt Deacalion Stevens`_, released under The `MIT License`_.
 
