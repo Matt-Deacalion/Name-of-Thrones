@@ -1,4 +1,5 @@
 import string
+from collections import defaultdict
 
 
 class MarkovChain:
@@ -25,3 +26,15 @@ class MarkovChain:
         return ''.join(
             [s for s in text.lower() if s in string.ascii_lowercase],
         )
+
+    def get_transition_tallies(self, pairs):
+        """
+        Takes a list of tuples and returns a dict containing information about
+        how often symbols appear after other symbols.
+        """
+        tallies = defaultdict(lambda: defaultdict(int))
+
+        for now, after in pairs:
+            tallies[now][after] += 1
+
+        return tallies
