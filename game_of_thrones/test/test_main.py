@@ -188,3 +188,13 @@ class MarkovChainTest(unittest.TestCase):
         """
         mc = MarkovChain('One two')
         self.assertFalse(('e', 't') in mc.pairs)
+
+    @mock.patch.object(MarkovChain, 'word', autospec=True)
+    def test_unique_word(self, mock_markovchain):
+        mc = MarkovChain(self.text)
+        mock_markovchain.return_value = ['One', 'Two', 'Three', 'One']
+
+        self.assertEqual(
+            [word for word in mc.unique_word()],
+            ['One', 'Two', 'Three'],
+        )

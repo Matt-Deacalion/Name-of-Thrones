@@ -33,6 +33,7 @@ class MarkovChain:
         self.text = text if text else self.sample_data
         self.min_length = min_length if min_length else 4
         self.max_length = max_length if max_length else 10
+        self.unique_words = set()
         self.pairs = []
 
         for word in self.text.split():
@@ -113,3 +114,13 @@ class MarkovChain:
         while True:
             length = random.randint(self.min_length, self.max_length)
             yield ''.join(islice(self.letter(), length))
+
+    def unique_word(self):
+        """
+        Generator that returns the next unique word indefinitely, because we
+        save each unique word in a `set` this could use a lot of memory.
+        """
+        for word in self.word():
+            if word not in self.unique_words:
+                self.unique_words.add(word)
+                yield word

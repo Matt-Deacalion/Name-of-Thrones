@@ -30,7 +30,7 @@ def main():
 
     init(autoreset=True)
 
-    for i, word in enumerate(chain.word()):
+    for i, word in enumerate(chain.unique_word()):
         if i == quantity:
             break
 
