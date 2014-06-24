@@ -43,7 +43,7 @@ You can use the `game-of-thrones` command from the shell to run the Game of Thro
     Generate words that sound like characters from Game of Thrones.
 
     Usage:
-      game-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>]
+      game-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>] [--json]
       game-of-thrones (-h | --help | --version)
 
     Options:
@@ -52,6 +52,7 @@ You can use the `game-of-thrones` command from the shell to run the Game of Thro
       -q, --quantity=<number>  the quantity of words to generate [default: 10].
       --min=<length>           the minimum length of each word [default: 4].
       --max=<length>           the maximum length of each word [default: 10].
+      -j, --json               output the names in JSON format.
 
 License
 -------
