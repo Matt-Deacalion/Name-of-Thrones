@@ -10,7 +10,7 @@ Game of Thrones Namer
 .. image:: https://pypip.in/download/game-of-thrones/badge.png?period=week&new
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Downloads
-.. image:: https://pypip.in/version/game-of-thrones/badge.png&new
+.. image:: https://pypip.in/version/game-of-thrones/badge.png?new
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Latest Version
 .. image:: https://pypip.in/wheel/game-of-thrones/badge.png
