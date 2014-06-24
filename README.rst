@@ -7,10 +7,10 @@ Game of Thrones Namer
 .. image:: https://coveralls.io/repos/Matt-Deacalion/Game-of-Thrones-Namer/badge.png?branch=master
     :target: https://coveralls.io/r/Matt-Deacalion/Game-of-Thrones-Namer?branch=master
     :alt: Test Coverage
-.. image:: https://pypip.in/download/game-of-thrones/badge.png?period=week
+.. image:: https://pypip.in/download/game-of-thrones/badge.png?period=week&new
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Downloads
-.. image:: https://pypip.in/version/game-of-thrones/badge.png
+.. image:: https://pypip.in/version/game-of-thrones/badge.png&new
     :target: https://pypi.python.org/pypi/game-of-thrones/
     :alt: Latest Version
 .. image:: https://pypip.in/wheel/game-of-thrones/badge.png
@@ -36,9 +36,7 @@ You can install the *Game of Thrones Namer* using pip:
 
 Usage
 -----
-You can use the `game-of-thrones` command from the shell to run the Game of Thrones Namer:
-
-.. code-block:: bash
+You can use the `game-of-thrones` command from the shell to run the Game of Thrones Namer::
 
     $ game-of-thrones --help
 
