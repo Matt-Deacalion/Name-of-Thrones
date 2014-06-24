@@ -183,5 +183,8 @@ class MarkovChainTest(unittest.TestCase):
                 self.assertFalse(letter in unexpected_letters)
 
     def test_pairwise_no_spaces(self):
+        """
+        Make sure there are no transitions between words.
+        """
         mc = MarkovChain('One two')
         self.assertFalse(('e', 't') in mc.pairs)
