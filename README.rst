@@ -25,7 +25,6 @@ unique project names, host names and the occasional stray cat.
 
 .. image:: https://raw.githubusercontent.com/Matt-Deacalion/Game-of-Thrones-Namer/screenshots/screenshot.jpg
     :alt: Game of Thrones Namer screenshot
-    :align: left
 
 Installation
 ------------
