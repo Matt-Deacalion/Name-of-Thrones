@@ -23,6 +23,10 @@ Game of Thrones Namer
 Command line tool to generate words that sound like characters from Game of Thrones. Useful for
 unique project names, host names and the occasional stray cat.
 
+.. image:: https://raw.githubusercontent.com/Matt-Deacalion/Game-of-Thrones-Namer/screenshots/screenshot.jpg
+    :alt: Game of Thrones Namer screenshot
+    :align: left
+
 Installation
 ------------
 You can install the *Game of Thrones Namer* using pip:
