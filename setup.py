@@ -2,9 +2,9 @@ from setuptools import setup
 import game_of_thrones
 
 setup(
-    name='game-of-thrones',
+    name='name-of-thrones',
     version=game_of_thrones.__version__.strip(),
-    url='http://dirtymonkey.co.uk/game-of-thrones',
+    url='http://dirtymonkey.co.uk/name-of-thrones',
     license='MIT',
     author=game_of_thrones.__author__.strip(),
     author_email='matt@dirtymonkey.co.uk',
@@ -16,7 +16,7 @@ setup(
     test_suite='tests',
     entry_points={
         'console_scripts': [
-            'game-of-thrones = game_of_thrones.main:main',
+            'name-of-thrones = game_of_thrones.main:main',
         ],
     },
     install_requires=[

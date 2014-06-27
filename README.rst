@@ -1,50 +1,50 @@
-=====================
-Game of Thrones Namer
-=====================
-.. image:: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer.svg?branch=master
-    :target: https://travis-ci.org/Matt-Deacalion/Game-of-Thrones-Namer
+===============
+Name of Thrones
+===============
+.. image:: https://travis-ci.org/Matt-Deacalion/Name-of-Thrones.svg?branch=master
+    :target: https://travis-ci.org/Matt-Deacalion/Name-of-Thrones
     :alt: Build Status
-.. image:: https://coveralls.io/repos/Matt-Deacalion/Game-of-Thrones-Namer/badge.png?branch=master
-    :target: https://coveralls.io/r/Matt-Deacalion/Game-of-Thrones-Namer?branch=master
+.. image:: https://coveralls.io/repos/Matt-Deacalion/Name-of-Thrones/badge.png?branch=master
+    :target: https://coveralls.io/r/Matt-Deacalion/Name-of-Thrones?branch=master
     :alt: Test Coverage
-.. image:: https://pypip.in/download/game-of-thrones/badge.png?period=week&new
-    :target: https://pypi.python.org/pypi/game-of-thrones/
+.. image:: https://pypip.in/download/name-of-thrones/badge.png?period=week&new
+    :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Downloads
-.. image:: https://pypip.in/version/game-of-thrones/badge.png?new
-    :target: https://pypi.python.org/pypi/game-of-thrones/
+.. image:: https://pypip.in/version/name-of-thrones/badge.png?new
+    :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Latest Version
-.. image:: https://pypip.in/wheel/game-of-thrones/badge.png
-    :target: https://pypi.python.org/pypi/game-of-thrones/
+.. image:: https://pypip.in/wheel/name-of-thrones/badge.png
+    :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Wheel Status
-.. image:: https://pypip.in/license/game-of-thrones/badge.png
-    :target: https://pypi.python.org/pypi/game-of-thrones/
+.. image:: https://pypip.in/license/name-of-thrones/badge.png
+    :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: License
 
 Command line tool to generate words that sound like characters from Game of Thrones. Useful for
 unique project names, host names and the occasional stray cat.
 
-.. image:: https://raw.githubusercontent.com/Matt-Deacalion/Game-of-Thrones-Namer/screenshots/screenshot.jpg
-    :alt: Game of Thrones Namer screenshot
+.. image:: https://raw.githubusercontent.com/Matt-Deacalion/Name-of-Thrones/screenshots/screenshot.jpg
+    :alt: Name of Thrones screenshot
 
 Installation
 ------------
-You can install the *Game of Thrones Namer* using pip:
+You can install the *Name of Thrones* using pip:
 
 .. code-block:: bash
 
-    $ pip install game-of-thrones
+    $ pip install name-of-thrones
 
 Usage
 -----
-You can use the `game-of-thrones` command from the shell to run the Game of Thrones Namer::
+You can use the `name-of-thrones` command from the shell to run Name of Thrones::
 
-    $ game-of-thrones --help
+    $ name-of-thrones --help
 
     Generate words that sound like characters from Game of Thrones.
 
     Usage:
-      game-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>] [--json]
-      game-of-thrones (-h | --help | --version)
+      name-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>] [--json]
+      name-of-thrones (-h | --help | --version)
 
     Options:
       --version                show program's version number and exit.
