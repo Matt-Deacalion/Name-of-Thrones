@@ -3,8 +3,8 @@
 """Generate words that sound like characters from Game of Thrones.
 
 Usage:
-  game-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>] [--json]
-  game-of-thrones (-h | --help | --version)
+  name-of-thrones [--quantity=<number>] [--min=<length>] [--max=<length>] [--json]
+  name-of-thrones (-h | --help | --version)
 
 Options:
   --version                show program's version number and exit.
