@@ -7,13 +7,13 @@ Name of Thrones
 .. image:: https://coveralls.io/repos/Matt-Deacalion/Name-of-Thrones/badge.png?branch=master
     :target: https://coveralls.io/r/Matt-Deacalion/Name-of-Thrones?branch=master
     :alt: Test Coverage
-.. image:: https://pypip.in/download/name-of-thrones/badge.png?period=week&new
+.. image:: https://pypip.in/download/name-of-thrones/badge.png?period=week
     :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Downloads
-.. image:: https://pypip.in/version/name-of-thrones/badge.png?new
+.. image:: https://pypip.in/version/name-of-thrones/badge.png
     :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Latest Version
-.. image:: https://pypip.in/wheel/name-of-thrones/badge.png
+.. image:: https://pypip.in/wheel/name-of-thrones/badge.png?new
     :target: https://pypi.python.org/pypi/name-of-thrones/
     :alt: Wheel Status
 .. image:: https://pypip.in/license/name-of-thrones/badge.png
