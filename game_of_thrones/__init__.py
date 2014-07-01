@@ -12,6 +12,7 @@ import random
 import string
 from itertools import islice
 from collections import defaultdict
+from re import search
 
 
 class MarkovChain:
@@ -128,6 +129,6 @@ class MarkovChain:
         save each unique word in a `set` this could use a lot of memory.
         """
         for word in self.word():
-            if word not in self.unique_words:
+            if word not in self.unique_words and not search(r'(\w)\1{2}', word):
                 self.unique_words.add(word)
                 yield word
