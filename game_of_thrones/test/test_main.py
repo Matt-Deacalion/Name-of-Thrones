@@ -170,3 +170,18 @@ class MarkovChainTest(unittest.TestCase):
             [word for word in mc.unique_word()],
             ['One', 'Two', 'Three'],
         )
+
+    @mock.patch('game_of_thrones.islice', autospec=True)
+    def test_consecutive_bugfix(self, mock_islice):
+        """
+        Regression test for bug #1. There should never be 3 or more
+        consecutive characters in a generated word.
+        """
+        mc = MarkovChain(self.text)
+        mock_islice.side_effect = [
+            ['S', 'c', 'o', 'o', 'o', 'b', 'y'],
+            ['D', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'b', 'y'],
+            ['D', 'o', 'o'],
+        ]
+
+        self.assertEqual(next(mc.word()), 'Doo')
