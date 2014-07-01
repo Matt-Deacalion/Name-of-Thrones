@@ -76,47 +76,28 @@ class MarkovChainTest(unittest.TestCase):
         }
 
     def test_markovchain_class_exists(self):
-        """
-        Does the `MarkovChain` class exist?
-        """
         self.assertTrue('MarkovChain' in globals())
 
     def test_text_initialised(self):
-        """
-        Does the text attribute get assigned correctly?
-        """
         self.assertEqual(self.text, MarkovChain(self.text).text)
 
     def test_pair_symbols(self):
-        """
-        Does the `pair_symbols` method work correctly?
-        """
         self.assertEqual(
             MarkovChain(self.text).pair_symbols(self.text),
             self.transitions,
         )
 
     def test_sanitise_text(self):
-        """
-        Does the `sanitise_text` method work correctly?
-        """
         mc = MarkovChain(self.text)
         self.assertEqual(mc.sanitise_text(mc.text), 'youknownothingjonsnow')
 
     def test_get_transition_tallies(self):
-        """
-        Does the `get_transition_tallies` method work correctly?
-        """
         mc = MarkovChain(self.text)
 
         for k, v in mc.get_transition_tallies(self.transitions).items():
             self.assertEqual(sum(v.values()), self.expected_transitions[k])
 
     def test_get_sum_transitions(self):
-        """
-        Does the `get_sum_transitions` method work correctly?
-        """
-
         self.assertEqual(
             MarkovChain(self.text).get_sum_transitions(self.tallies),
             self.expected_transitions,
@@ -124,9 +105,6 @@ class MarkovChainTest(unittest.TestCase):
 
     @mock.patch('game_of_thrones.random.randint', autospec=True)
     def test_get_weighted_letter(self, mock_random_randint):
-        """
-        Does the `get_weighted_letter` method work correctly?
-        """
         mock_random_randint.return_value = 0
 
         mc = MarkovChain(self.text)
@@ -138,9 +116,6 @@ class MarkovChainTest(unittest.TestCase):
 
     @mock.patch('game_of_thrones.random.choice', autospec=True)
     def test_letter(self, mock_random_randchoice):
-        """
-        Does the `letter` generator work correctly?
-        """
         mock_random_randchoice.return_value = 'Y'
 
         mc = MarkovChain(self.text)
@@ -154,9 +129,6 @@ class MarkovChainTest(unittest.TestCase):
         self.assertTrue(word[2] in 'utnw')
 
     def test_word(self):
-        """
-        Does the `word` generator work correctly?
-        """
         expected_letters = list(self.expected_transitions.keys())
 
         try:
