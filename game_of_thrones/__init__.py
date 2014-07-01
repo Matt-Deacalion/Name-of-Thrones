@@ -7,6 +7,7 @@ characters from Game of Thrones. Good for project names.
 __author__ = 'Matt Deacalion Stevens'
 __version__ = '0.1.9'
 
+import re
 import random
 import string
 from itertools import islice
@@ -113,7 +114,13 @@ class MarkovChain:
         """
         while True:
             length = random.randint(self.min_length, self.max_length)
-            yield ''.join(islice(self.letter(), length))
+            word = ''.join(islice(self.letter(), length))
+
+            # are there three or more consecutive characters?
+            if re.search(r'(?:(\w)\1{2})', word):
+                continue
+
+            yield word
 
     def unique_word(self):
         """
