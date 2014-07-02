@@ -7,11 +7,10 @@ characters from Game of Thrones. Good for project names.
 __author__ = 'Matt Deacalion Stevens'
 __version__ = '0.2.0'
 
-import re
 import random
 import string
 from itertools import islice
-from collections import defaultdict
+from collections import defaultdict, deque
 
 
 class MarkovChain:
@@ -102,10 +101,16 @@ class MarkovChain:
         """
         Generator that returns the next letter indefinitely.
         """
+        consecutive = deque('123', maxlen=3)
         letter = random.choice(list(self.transition_tallies.keys()))
 
         while True:
-            yield letter
+            consecutive.append(letter)
+
+            # make sure there's not three or more consecutive characters
+            if len(set(consecutive)) != 1:
+                yield letter
+
             letter = self.get_weighted_letter(letter)
 
     def word(self):
@@ -114,13 +119,7 @@ class MarkovChain:
         """
         while True:
             length = random.randint(self.min_length, self.max_length)
-            word = ''.join(islice(self.letter(), length))
-
-            # are there three or more consecutive characters?
-            if re.search(r'(?:(\w)\1{2})', word):
-                continue
-
-            yield word
+            yield ''.join(islice(self.letter(), length))
 
     def unique_word(self):
         """

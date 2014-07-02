@@ -171,17 +171,26 @@ class MarkovChainTest(unittest.TestCase):
             ['One', 'Two', 'Three'],
         )
 
-    @mock.patch('game_of_thrones.islice', autospec=True)
-    def test_consecutive_bugfix(self, mock_islice):
+    @mock.patch.object(MarkovChain, 'get_weighted_letter', autospec=True)
+    @mock.patch('game_of_thrones.random.choice', autospec=True)
+    @mock.patch('game_of_thrones.random.randint', autospec=True)
+    def test_consecutive_bugfix(
+        self,
+        mock_rand_int,
+        mock_rand_choice,
+        mock_get_weighted_letter,
+    ):
         """
         Regression test for bug #1. There should never be 3 or more
         consecutive characters in a generated word.
         """
-        mc = MarkovChain(self.text)
-        mock_islice.side_effect = [
-            ['S', 'c', 'o', 'o', 'o', 'b', 'y'],
-            ['D', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'b', 'y'],
-            ['D', 'o', 'o'],
-        ]
+        generated = 'Scooooooooby!'
+        expected_output = 'Scooby!'
 
-        self.assertEqual(next(mc.word()), 'Doo')
+        mc = MarkovChain(self.text)
+
+        mock_rand_int.return_value = len(expected_output)
+        mock_rand_choice.return_value = generated[0]
+        mock_get_weighted_letter.side_effect = list(generated[1:])
+
+        self.assertEqual(next(mc.word()), expected_output)
