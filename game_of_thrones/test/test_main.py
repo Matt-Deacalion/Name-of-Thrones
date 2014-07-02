@@ -191,6 +191,6 @@ class MarkovChainTest(unittest.TestCase):
 
         mock_rand_int.return_value = len(expected_output)
         mock_rand_choice.return_value = generated[0]
-        mock_get_weighted_letter.side_effect = list(generated[1:])
+        mock_get_weighted_letter.side_effect = iter(generated[1:])
 
         self.assertEqual(next(mc.word()), expected_output)
