@@ -11,3 +11,5 @@ dist/
 
 # Coverage report
 .coverage
+
+*.pyc
